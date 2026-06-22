@@ -1,0 +1,16 @@
+This is a single-agent implementation in LangGraph.
+
+
+
+1. Run the installs to configure the environment:
+    --quite :  reduces terminal output instead of long installation logs.
+    wikipedia==1.4.0 : this is a python wrapper for wikipedia that allows us to search, fetch summaries, retrieve page content.
+    langchain-core==0.3.59 : this is the core module of LangChain. This includes base abstractions for LLMs, prompt templates, message schemas, runnable pipelines and core agent interfaces. (Not the full LangChain library)
+    pydantic==2.11.9 : pydantic is used for data validation, defining structured schemas, ensuring type safety at runtime.  
+
+    !pip install --quiet wikipedia==1.4.0 langchain-core==0.3.59 pydantic==2.11.9
+
+2. Or use `requirements.txt`:
+    - Create `requirements.txt` with the required package versions.
+    - Install with:
+        `pip install -r requirements.txt`
