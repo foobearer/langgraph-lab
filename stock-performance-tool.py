@@ -15,10 +15,12 @@ def stock_data_tool(
         months, and years into days. 
     """
 
-    file_path = f"data/{company_ticker}.cvg"
+    csv_path = f"data/{company_ticker}.csv"
+    cvg_path = f"data/{company_ticker}.cvg"
+    file_path = csv_path if os.path.exists(csv_path) else cvg_path
 
     if not os.path.exists(file_path):
-        return f"Sorry, but the data for the company {company_ticker} is not available. Please try Apple, Amazon, Meta"
+        return f"Sorry, but the data for the company {company_ticker} is not available. Please make sure a matching CSV file exists in the data folder."
     
     stock_df = pd.read_csv(file_path, index_col='Date', parse_dates=True)
     stock_df.index = stock_df.index.date
