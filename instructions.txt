@@ -14,3 +14,9 @@ This is a single-agent implementation in LangGraph.
     - Create `requirements.txt` with the required package versions.
     - Install with:
         `pip install -r requirements.txt`
+
+3. Additional packages used by the stock-performance example:
+    - pandas==2.3.3 : used to read and process CSV data.
+    - tabulate==0.9.0 : used to format tables with `.to_markdown()`.
+    - Install with:
+        `pip install pandas==2.3.3 tabulate==0.9.0`
