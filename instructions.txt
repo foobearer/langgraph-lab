@@ -7,9 +7,11 @@ This is a single-agent implementation in LangGraph.
     wikipedia==1.4.0 : this is a python wrapper for wikipedia that allows us to search, fetch summaries, retrieve page content.
     langchain-core==0.3.59 : this is the core module of LangChain. This includes base abstractions for LLMs, prompt templates, message schemas, runnable pipelines and core agent interfaces. (Not the full LangChain library)
     langchain-experimental==0.3.4 : provides experimental utilities such as PythonREPL for the REPL tool example.
+    langgraph==0.5.3 : provides the graph-based orchestration primitives used by the LangGraph examples.
+    langchain-openai==0.3.16 : provides the OpenAI chat model integration used by LangChain applications.
     pydantic==2.11.9 : pydantic is used for data validation, defining structured schemas, ensuring type safety at runtime.  
 
-    !pip install --quiet wikipedia==1.4.0 langchain-core==0.3.59 langchain-experimental==0.3.4 pydantic==2.11.9
+    !pip install --quiet wikipedia==1.4.0 langchain-core==0.3.59 langchain-experimental==0.3.4 langgraph==0.5.3 langchain-openai==0.3.16 pydantic==2.11.9
 
 2. Or use `requirements.txt`:
     - Create `requirements.txt` with the required package versions.
@@ -21,3 +23,8 @@ This is a single-agent implementation in LangGraph.
     - tabulate==0.9.0 : used to format tables with `.to_markdown()`.
     - Install with:
         `pip install pandas==2.3.3 tabulate==0.9.0`
+
+4. OpenAI configuration:
+    - Create a local `.env` file in the project root and add your API key there.
+    - Example: `OPENAI_API_KEY=your-api-key-here`
+    - The script will read this file automatically when you run it.
