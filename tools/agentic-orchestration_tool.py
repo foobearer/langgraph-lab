@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 from langchain_openai import ChatOpenAI
-from load_env_file import load_env_file
+from utils.load_env_file import load_env_file
 
 
 load_env_file()
