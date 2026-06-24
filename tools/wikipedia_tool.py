@@ -26,7 +26,7 @@ def wikipedia_tool(
         return f"Failed to execute. Error: {repr(e)}"
     return f"Successfully executed:\nWikipedia summary: {summary}"
 
-
-company_name = "Warner bros."
-wiki_summary = wikipedia_tool.invoke(f"{company_name}")
-print(wiki_summary)
+# For tool testing uncomment the codes below
+# company_name = "Warner bros."
+# wiki_summary = wikipedia_tool.invoke(f"{company_name}")
+# print(wiki_summary)

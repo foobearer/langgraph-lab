@@ -1,7 +1,11 @@
 import os
+import sys
 import warnings
+from pathlib import Path
 from typing import Annotated
 from typing_extensions import TypedDict
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 os.environ.setdefault("PYTHONWARNINGS", "ignore")
 warnings.filterwarnings("ignore")
@@ -45,8 +49,8 @@ graph_builder.add_edge("llm", END)
 # Compile the graph
 graph = graph_builder.compile()
 
-# Render the graph as Mermaid text
-print(graph.get_graph().draw_mermaid())
+# Render the graph as Mermaid text (uncomment the below codes to. test this tool)
+#print(graph.get_graph().draw_mermaid())
 
 # To visualise the output you can navigate to mermaid.live
 

@@ -37,9 +37,9 @@ def stock_data_tool(
     return f"We've successfully retrieved the last '{num_days}' of data for {company_ticker}: \n\n {filtered_df.to_markdown()}"
 
 
-#Invoking the tool and printing the result.
+#Invoking the tool and printing the result. (uncomment below codes to test this tool)
 
-retrieved_data = stock_data_tool.invoke({"company_ticker": "AMZN", "num_days": 5})
-print(retrieved_data)
+# retrieved_data = stock_data_tool.invoke({"company_ticker": "AMZN", "num_days": 5})
+# print(retrieved_data)
 
 

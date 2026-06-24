@@ -20,7 +20,8 @@ def python_repl_tool(
         return f"Failed to execute. Error {repr(e)}"
     return f"Successfully executed the python REPL tool. \n\n Python code executed: \n\n ---Python Code--- \n\n {code} \n\n ---Code Output--- \n\n {result}"
 
-code = f"""
+if __name__ == "__main__":
+    code = f"""
 import numpy as np
 
 arr = np.arange(0, 9)
@@ -28,4 +29,4 @@ print(arr)
 print(2 * arr)
 """
 
-print(python_repl_tool.invoke({"code": code}))
+    print(python_repl_tool.invoke({"code": code}))
