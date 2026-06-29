@@ -6,7 +6,7 @@ from typing_extensions import TypedDict
 
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
-from langgraph.prebuilt import ToolNode
+from langgraph.prebuilt import ToolNode, tools_condition
 
 from langchain_openai import ChatOpenAI
 
@@ -29,3 +29,24 @@ graph_builder = StateGraph(State)
 tools = [python_repl_tool, stock_data_tool, wikipedia_tool]
 llm = ChatOpenAI(model="gpt-4o-mini", api_key=OPEN_API_KEY)
 
+llm_with_tools = llm.bind_tools(tools)
+
+def llm_nodes(state:State):
+    return {"messages": [llm_with_tools.invoke(state["messages"])]}
+
+#Define the agent workflow
+
+# Create the llm and tools nodes
+graph_builder.add_node("llm", llm_nodes)
+tool_node = ToolNode(tools=tools)
+graph_builder.add_node("tools", tool_node)
+
+# Add the edges
+graph_builder.add_edge(START, "llm")
+graph_builder.add_conditional_edges("llm", tools_condition, ["tools", END])
+graph_builder.add_edge("tools", "llm")
+
+graph = graph_builder.compile()
+
+
+print(graph.get_graph().draw_mermaid())
