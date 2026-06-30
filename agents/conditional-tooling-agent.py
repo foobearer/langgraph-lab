@@ -14,6 +14,8 @@ from tools.python_repl_tool import python_repl_tool
 from tools.stock_performance_tool import stock_data_tool
 from tools.wikipedia_tool import wikipedia_tool
 
+from utils.pretty_print import pretty_print_messages
+
 
 #Setup OPEN_API_KEY
 from utils.load_env_file import load_env_file
@@ -50,3 +52,8 @@ graph = graph_builder.compile()
 
 
 print(graph.get_graph().draw_mermaid())
+
+for chunk in graph.stream(
+    {"messages": [{"role": "user", "content": "Tell me about Apple Inc."}]}
+):
+    pretty_print_messages(chunk)
