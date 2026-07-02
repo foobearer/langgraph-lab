@@ -7,3 +7,14 @@
 
 # Local environment variables
 .env
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+.venv-py39-backup/
+
+# macOS metadata
+.DS_Store
