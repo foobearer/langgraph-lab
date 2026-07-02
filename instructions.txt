@@ -9,10 +9,11 @@ This is a single-agent implementation in LangGraph.
     langchain-experimental==0.3.4 : provides experimental utilities such as PythonREPL for the REPL tool example.
     langgraph==0.5.3 : provides the graph-based orchestration primitives used by the LangGraph examples.
     langgraph-swarm==0.0.13 : provides multi-agent orchestration and swarm coordination capabilities for building coordinated multi-agent systems.
+    langgraph-supervisor==0.0.27 : provides supervisor-style multi-agent orchestration patterns built on LangGraph.
     langchain-openai==0.3.16 : provides the OpenAI chat model integration used by LangChain applications.
     pydantic==2.11.9 : pydantic is used for data validation, defining structured schemas, ensuring type safety at runtime.  
 
-    !pip install --quiet wikipedia==1.4.0 langchain-core==0.3.59 langchain-experimental==0.3.4 langgraph==0.5.3 langgraph-swarm==0.0.13 langchain-openai==0.3.16 pydantic==2.11.9
+    !pip install --quiet wikipedia==1.4.0 langchain-core==0.3.59 langchain-experimental==0.3.4 langgraph==0.5.3 langgraph-swarm==0.0.13 langgraph-supervisor==0.0.27 langchain-openai==0.3.16 pydantic==2.11.9
 
 2. Or use `requirements.txt`:
     - Create `requirements.txt` with the required package versions.
